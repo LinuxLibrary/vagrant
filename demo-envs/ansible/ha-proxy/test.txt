@@ -1,0 +1,2 @@
+Stat= 2
+	include /var/log/messages;
