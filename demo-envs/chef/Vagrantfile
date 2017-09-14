@@ -6,18 +6,28 @@
 # backwards compatibility). Please don't change it unless you know what
 # you're doing.
 Vagrant.configure("2") do |config|
-	config.vm.define "dev01" do |dev01|
-#		dev01.vm.box = "centos/7"
-		dev01.vm.box = "nrel/CentOS-6.5-x86_64"
-		dev01.vm.hostname = "dev01"
-		dev01.vm.network "private_network", ip: "192.168.1.50"
-#		dev01.vm.boot_timeout = 600
+	config.vm.define "server" do |server|
+		server.vm.box = "centos/7"
+#		server.vm.box = "nrel/CentOS-6.5-x86_64"
+		server.vm.hostname = "server"
+		server.vm.network "private_network", ip: "192.168.1.50"
 	end
-	config.vm.define "dev02" do |dev02|
-#		dev02.vm.box = "centos/7"
-		dev02.vm.box = "nrel/CentOS-6.5-x86_64"
-		dev02.vm.hostname = "dev02"
-		dev02.vm.network "private_network", ip: "192.168.1.51"
-#		dev02.vm.boot_timeout = 600
+	config.vm.define "workstation" do |workstation|
+		workstation.vm.box = "centos/7"
+#		workstation.vm.box = "nrel/CentOS-6.5-x86_64"
+		workstation.vm.hostname = "workstation"
+		workstation.vm.network "private_network", ip: "192.168.1.51"
+	end
+	config.vm.define "node01" do |node01|
+		node01.vm.box = "centos/7"
+#		node01.vm.box = "nrel/CentOS-6.5-x86_64"
+		node01.vm.hostname = "node01"
+		node01.vm.network "private_network", ip: "192.168.1.52"
+	end
+	config.vm.define "node02" do |node02|
+		node02.vm.box = "centos/7"
+#		node02.vm.box = "nrel/CentOS-6.5-x86_64"
+		node02.vm.hostname = "node02"
+		node02.vm.network "private_network", ip: "192.168.1.53"
 	end
 end
