@@ -1,0 +1,10 @@
+---
+- hosts: 192.168.1.50
+  remote_user: vagrant
+  become: yes
+  become_user: root
+  tasks:
+  - name: RegEx testing - 1
+    replace: dest='/home/vagrant/ansible/ha-proxy/test.txt' regexp='Stat= 12' replace='Stat= 1'
+  - name: RegEx testing - 2
+    replace: dest='/home/vagrant/ansible/ha-proxy/test.txt' regexp='messages; /var/log/dmesg;$' replace='messages;\n\tinclude /var/log/dmesg;'
