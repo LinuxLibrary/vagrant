@@ -1,0 +1,1 @@
+{"rsync":{"/vagrant":{"type":"rsync","guestpath":"/vagrant","hostpath":"/vagrant/ansible/elk-stack","disabled":false,"__vagrantfile":true,"owner":"vagrant","group":"vagrant"}}}
