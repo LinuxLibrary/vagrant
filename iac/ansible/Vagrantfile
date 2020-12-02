@@ -1,0 +1,47 @@
+# -*- mode: ruby -*-
+# vi: set ft=ruby :
+
+# All Vagrant configuration is done below. The "2" in Vagrant.configure
+# configures the configuration version (we support older styles for
+# backwards compatibility). Please don't change it unless you know what
+# you're doing.
+Vagrant.configure("2") do |config|
+	config.vm.define "dev01" do |dev01|
+#		dev01.vm.box = "centos/7"
+#		dev01.vm.box = "nrel/CentOS-6.5-x86_64"
+#		dev01.vm.boot_timeout = 600
+		dev01.vm.box = "ubuntu/xenial64"
+		dev01.vm.hostname = "dev01"
+		dev01.vm.network "private_network", ip: "192.168.1.50"
+	end
+	config.vm.define "uat01" do |uat01|
+		uat01.vm.box = "ubuntu/xenial64"
+		uat01.vm.hostname = "uat01"
+		uat01.vm.network "private_network", ip: "192.168.2.50"
+	end
+	config.vm.define "uat02" do |uat02|
+		uat02.vm.box = "ubuntu/xenial64"
+		uat02.vm.hostname = "uat02"
+		uat02.vm.network "private_network", ip: "192.168.2.51"
+	end
+	config.vm.define "prd01" do |prd01|
+		prd01.vm.box = "ubuntu/xenial64"
+		prd01.vm.hostname = "prd01"
+		prd01.vm.network "private_network", ip: "192.168.3.50"
+	end
+	config.vm.define "prd02" do |prd02|
+		prd02.vm.box = "ubuntu/xenial64"
+		prd02.vm.hostname = "prd02"
+		prd02.vm.network "private_network", ip: "192.168.3.51"
+	end
+	config.vm.define "prd03" do |prd03|
+		prd03.vm.box = "ubuntu/xenial64"
+		prd03.vm.hostname = "prd03"
+		prd03.vm.network "private_network", ip: "192.168.3.52"
+	end
+	config.vm.define "prd04" do |prd04|
+		prd04.vm.box = "ubuntu/xenial64"
+		prd04.vm.hostname = "prd04"
+		prd04.vm.network "private_network", ip: "192.168.3.53"
+	end
+end
